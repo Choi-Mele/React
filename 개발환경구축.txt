@@ -1,0 +1,95 @@
+■ NodeJS 설치
+  - 자바스크립트 실행기
+    (브라우저 없이 자바스크립트 실행)
+  
+  - https://nodejs.org/ko/ 접속 후 lts 버전 다운로드
+  
+  - 설치확인 및 버전 확인
+    터미널 / node -v입력
+
+
+■ VSCode 환경설정
+  - 단축아이콘/우클릭/속성/호환성/관리자권한으로 실행하기 체크
+  
+  - 터미널실행 / 터미널창 상단의 옵션( " + " 옆의 " v " 화살표 클릭 )
+
+  - setting.json (관리/설정/우측상단아이콘)에 하단의 내용 추가 : 자동완성(emmet) 기능
+    
+    "emmet.includeLanguages":{
+      "javascript":"javascriptreact"
+    }
+      <-- 마지막에는 , 표시를 하지 않아야 한다-->
+  
+
+■ VSCode Extension : 확장 플러그인
+  - Reactjs code snippets (charalampos karypidis 제작)
+  
+  - Auto import (steoates 제작)
+
+■ Create React app 설치
+  - ( WebPack + Babel + React )
+  
+  - 터미널 환경에서 
+    · npm i -g create-react-app
+    · create-react-app -V (v대문자) 
+
+■ Terminal 명령어
+  - F1 / Terminal:clear
+  - cls : Terminal clear : 초기화
+  - cd.. : Change Directory.. : 상위폴더 이동
+  - cd 타켓폴더 : Change Directory : 타겟폴더 이동
+
+■ React 프로젝트 생성
+  - create-react-app 폴더명 (대문자, 하이픈, 띄어쓰기 안됨)
+
+  ◆ public / index.html
+      <!DOCTYPE html>
+      <html lang="ko">
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <title>React App</title>
+      </head>
+      <body>
+        <div id="root"></div>
+      </body>
+      </html>
+
+
+  ◆ src / index.js
+      import React from 'react';
+      import ReactDOM from 'react-dom/client';
+      import App from './App';
+
+      ReactDOM.createRoot(document.getElementById('root')).render(
+        <>
+          <App />
+        </>,
+      );
+
+  ◆ src / app.js
+      const App = () => {
+      return (
+          <>
+            app
+          </>
+        );
+      };
+      export default App;
+
+■ 서버실행 
+  - 실행 : npm start
+  - 종료 : Ctrl + c
+
+■ 배포
+  ◆ 루트폴더 배포시
+    - 서버중지 (Ctrl + c) -> npm run build
+    - build 폴더 안의 파일들을 루트폴더에 업로드
+
+  ◆ 루트폴더의 하위폴더 배포시
+    - 프로젝트 완성 후
+    - package.json 파일에 키추가
+    - 서버중지 (Ctrl + c) -> npm run build
+    - build 폴더 안의 파일들을 등록한 폴더명에 업로드
+  
